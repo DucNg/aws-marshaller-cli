@@ -1,0 +1,12 @@
+{
+  "name": "aws-marshaller-cli",
+  "version": "1.0.0",
+  "description": "A json to DynamoDB Document converter",
+  "main": "main.js",
+  "repository": "github.com/DucNg/aws-marshaller-cli",
+  "author": "Duc Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/util-dynamodb": "^3.267.0"
+  }
+}
