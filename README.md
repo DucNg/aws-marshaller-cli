@@ -1,12 +1,23 @@
 # aws-marshaller-cli
 
-A command line tool to convert json to AWS DynamoDB Document.
+A command line tool to marshall and unmarshall json to AWS DynamoDB Document.
 
 # Usage
 
+## Marshall
+
 ```shell
 yarn
-node main.js myfile.json
-cat myfile.json | node main.js -
-node main.js -
+node marshall.js myfile.json
+cat myfile.json | node marshall.js -
+node marshall.js -
+```
+
+## Unmarshall
+
+```shell
+yarn
+node unmarshall.js myMarshalledFile.json
+cat myMarshalledFile.json | node marshall.js -
+node marshall.js -
 ```

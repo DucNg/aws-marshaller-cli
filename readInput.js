@@ -1,15 +1,14 @@
-const { marshall } = require("@aws-sdk/util-dynamodb");
 const fs = require("fs");
 
 const filename = process.argv[2];
 if (!filename) {
-  console.log("Usage: node main.js <filename|->")
-  return
+  console.log("Usage: node main.js <filename|->");
+  process.exit();
 }
 
 let data;
 
-(async () => {
+exports.parseInput = async () => {
   if (filename === "-") {
     var stdinBuffer = fs.readFileSync(0); // STDIN_FILENO = 0
     data = stdinBuffer.toString();
@@ -21,10 +20,8 @@ let data;
       }
   }
 
-  const json = JSON.parse(data);
-  const marshalledData = marshall(json);
-  console.log(JSON.stringify(marshalledData));
-})();
+  return JSON.parse(data);
+};
 
 function readFile(filepath) {
   return new Promise((resolve, reject) => {
